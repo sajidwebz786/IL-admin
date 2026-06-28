@@ -1,0 +1,12 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Let backend/proxy routes pass through instead of serving the SPA shell.
+RewriteRule ^(api|uploads)(/.*)?$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.html [L]
