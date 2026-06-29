@@ -4,14 +4,15 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react({ fastRefresh: false })],
   build: {
-    sourcemap: false
+    sourcemap: false,
+    outDir: 'dist-render'
   },
   server: {
     host: '0.0.0.0',
     port: 5173,
     strictPort: true,
     allowedHosts: [
-      'hrms-infolinx.onrender.com',
+      'infolinx-server-hrms.onrender.com',
       '.onrender.com'
     ]
   }
